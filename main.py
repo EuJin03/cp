@@ -75,6 +75,26 @@ array = []
 while n > 0:
     array.append(list(map(str, input().split())))
     n-=1
+    
+def quick(array):
+    def sort(arr,l,r):
+        if l < r:
+            p = part(arr, l, r)
+            sort(arr,l,p-1)
+            sort(arr,p+1,r)
+    def part(arr,l,r):
+        pivot = arr[r]
+        a = l
+        for i in range(l,r):
+            if (arr[i] < pivot):
+                arr[i], arr[a] = arr[a], arr[i]
+                a += 1
+        
+        arr[r], arr[a] = arr[a], arr[r]
+        return a
+    
+    sort(array, 0, len(array) - 1)
+    return array
 
 SDG = {'CleanEnergy':20, 'QualityEducation':16, 'ZeroHunger':12, 'AffordableHousing':8, 'GenderEquity':4}
 CSR = {'Excellent':9, 'Good':6, 'Fair':3}
@@ -91,22 +111,20 @@ for x in array:
     for y in CSR:
         if (x[3] == y):
             performance+=CSR[y]
-    
     performance+=float(x[4])*2
     performance+=float(x[5])
-    
+
     result[x[0]] = performance
 
-print(result)    
+arr = []
+for key,value in sorted(result.items()):
+    arr.append(value)
+arr = sorted(quick(arr), reverse=True)
 
-for i in range(len(result)):
-    for key,value in sorted(result.items(),reverse=True):
-        print(value)
-        # print(result[index])
-        # print(result[index+1])
-        # if result[index].values() > result[index+1].values():
-        #     temp = result[index]
-        #     result[index] = result[index+1]
-        #     result[index+1] = temp
+for x in arr:
+    for y in result:
+        if (x == result[y]):
+            print(y)
+
     
     
