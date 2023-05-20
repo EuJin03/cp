@@ -24,3 +24,19 @@ for x in array:
         print("False")
     gojo = 0
     jogo = 0
+    
+    
+# n = int(input())
+# arr = []
+# while n > 0:
+#     arr.append(list(map(str, input().split())))
+#     n-=1
+    
+# Startup1 1507366 Affordable Fair 7.9
+
+i = 1507366
+SDG = {'CleanEnergy':20, 'QualityEducation':16, 'ZeroHunger':12, 'AffordableHousing':8, 'GenderEquity':4}
+CSR = {'Excellent':9, 'Good':6, 'Fair':3}
+
+for x in arr:
+    
