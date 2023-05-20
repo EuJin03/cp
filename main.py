@@ -62,6 +62,12 @@ for x in arr:
     
 print(result)
 
+# inputs
+# Startup1 7012348 QualityEducation Excellent 7.3 7.9
+# Startup2 9393822 GenderEquity Excellent 8.8 9.7
+# Startup3 1846780 AffordableHousing Good 6.9 9.2
+# Startup4 3961113 ZeroHunger Excellent 9.1 6.5
+# Startup5 9081611 ZeroHunger Excellent 5.8 5.8
 
     
     
