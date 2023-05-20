@@ -69,5 +69,44 @@ print(result)
 # Startup4 3961113 ZeroHunger Excellent 9.1 6.5
 # Startup5 9081611 ZeroHunger Excellent 5.8 5.8
 
+
+n = int(input())
+array = []
+while n > 0:
+    array.append(list(map(str, input().split())))
+    n-=1
+
+SDG = {'CleanEnergy':20, 'QualityEducation':16, 'ZeroHunger':12, 'AffordableHousing':8, 'GenderEquity':4}
+CSR = {'Excellent':9, 'Good':6, 'Fair':3}
+result = {key: value for key, value in []}
+for x in array:
+    result[x[0]] = 0
+
+for x in array:
+    performance = 0
+    revenue = int(x[1]) / pow(10,8) * 405
+    for y in SDG:
+        if (x[2] == y):
+            performance+=SDG[y]
+    for y in CSR:
+        if (x[3] == y):
+            performance+=CSR[y]
+    
+    performance+=float(x[4])*2
+    performance+=float(x[5])
+    
+    result[x[0]] = performance
+
+print(result)    
+
+for i in range(len(result)):
+    for key,value in sorted(result.items(),reverse=True):
+        print(value)
+        # print(result[index])
+        # print(result[index+1])
+        # if result[index].values() > result[index+1].values():
+        #     temp = result[index]
+        #     result[index] = result[index+1]
+        #     result[index+1] = temp
     
     
