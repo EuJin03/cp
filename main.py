@@ -104,7 +104,8 @@ for x in array:
 
 for x in array:
     performance = 0
-    revenue = int(x[1]) / pow(10,8) * 405
+    revenue = int(x[1]) / pow(10,8) * 40
+    performance +=revenue
     for y in SDG:
         if (x[2] == y):
             performance+=SDG[y]
@@ -115,7 +116,6 @@ for x in array:
     performance+=float(x[5])
 
     result[x[0]] = performance
-
 arr = []
 for key,value in sorted(result.items()):
     arr.append(value)
